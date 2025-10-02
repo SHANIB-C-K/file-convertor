@@ -1,0 +1,25 @@
+Welcome to File Converter!
+
+This is a sample text file to test the conversion functionality.
+
+Features of this File Converter:
+- Universal format support
+- Drag & drop interface
+- Batch conversion
+- Real-time progress tracking
+- Cross-platform compatibility
+
+Supported conversions in basic version:
+✅ TXT to HTML
+✅ HTML to TXT
+✅ Same format copying
+
+Advanced conversions available with additional libraries:
+🔄 Images: PNG, JPG, WebP, SVG, GIF, BMP
+🔄 Documents: PDF, DOCX
+🔄 Spreadsheets: XLSX, CSV
+
+Developed by SHANIB C K
+File Converter v1.0.0
+
+Try converting this file to HTML to see the beautiful formatted output!

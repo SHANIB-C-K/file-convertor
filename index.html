@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">🔄 File Converter</h1>
+                <p class="app-subtitle">Convert between various file formats with ease</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- File Upload Area -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <h3>Drop files here or click to browse</h3>
+                        <p>Supported formats: PNG, JPG, SVG, WebP, PDF, DOCX, XLSX, CSV, TXT, HTML</p>
+                        <button class="browse-btn" id="browseBtn">Browse Files</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File List -->
+            <section class="files-section">
+                <div class="files-header">
+                    <h3>Files to Convert</h3>
+                    <button class="clear-all-btn" id="clearAllBtn">Clear All</button>
+                </div>
+                <div class="files-list" id="filesList">
+                    <div class="no-files-message" id="noFilesMessage">
+                        <p>No files selected. Add files to start converting.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conversion Options -->
+            <section class="options-section" id="optionsSection" style="display: none;">
+                <h3>Conversion Options</h3>
+                <div class="options-grid">
+                    <div class="option-group">
+                        <label for="outputFormat">Output Format:</label>
+                        <select id="outputFormat" class="format-select">
+                            <option value="">Select format...</option>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="quality">Quality (for images):</label>
+                        <input type="range" id="quality" min="10" max="100" value="90" class="quality-slider">
+                        <span id="qualityValue">90%</span>
+                    </div>
+                    <div class="option-group">
+                        <label for="outputPath">Output Directory:</label>
+                        <div class="path-input-group">
+                            <input type="text" id="outputPath" class="path-input" placeholder="Select output directory..." readonly>
+                            <button class="path-browse-btn" id="pathBrowseBtn">Browse</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="convert-actions">
+                    <button class="convert-btn" id="convertBtn" disabled>
+                        <span class="btn-text">Convert Files</span>
+                        <span class="btn-loader" style="display: none;">Converting...</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <h3>Conversion Progress</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0% Complete</div>
+                </div>
+                <div class="progress-details" id="progressDetails"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h3>Conversion Results</h3>
+                <div class="results-list" id="resultsList"></div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Developed by <strong>SHANIB C K</strong> | File Converter v1.0.0</p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Processing files...</p>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

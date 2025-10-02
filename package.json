@@ -1,0 +1,73 @@
+{
+  "name": "file-converter",
+  "version": "1.0.0",
+  "description": "Universal File Converter - Convert between various file formats including images, documents, and PDFs",
+  "main": "main.js",
+  "author": "SHANIB C K",
+  "license": "MIT",
+  "homepage": "https://github.com/SHANIB-C-K/file-convertor",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish=never"
+  },
+  "devDependencies": {
+    "electron": "^27.3.11",
+    "electron-builder": "^24.6.4"
+  },
+  "optionalDependencies": {
+    "jimp": "^0.22.10",
+    "mammoth": "^1.6.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^21.3.8",
+    "sharp": "^0.32.6",
+    "xlsx": "^0.18.5"
+  },
+  "build": {
+    "appId": "com.shanicb.fileconverter",
+    "productName": "File Converter",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "node_modules/sharp/**/*",
+      "node_modules/pdf-lib/**/*",
+      "node_modules/mammoth/**/*",
+      "node_modules/xlsx/**/*",
+      "node_modules/jimp/**/*"
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Utility",
+      "icon": "assets/icon.png"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    }
+  }
+}
