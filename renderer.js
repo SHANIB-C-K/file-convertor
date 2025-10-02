@@ -51,11 +51,10 @@ class FileConverter {
     }
 
     setDefaultOutputPath() {
-        // Set default output path to Downloads or Desktop
+        // Set default output path placeholder
         const outputPath = document.getElementById('outputPath');
-        const defaultPath = require('os').homedir() + '/Downloads/FileConverter';
-        outputPath.value = defaultPath;
-        outputPath.placeholder = 'Select output directory...';
+        outputPath.value = '';
+        outputPath.placeholder = 'Click Browse to select output directory...';
     }
 
     async selectFiles() {
